@@ -15,6 +15,14 @@ class GoogleTest(unittest.TestCase):
         search_field.submit()
         assert "Es wurden keine mit deiner Suchanfrage" not in self.driver.page_source
 
+    def testGoogleNegativeSearch(self):
+        self.driver.get('https://www.google.de/')
+        self.assertIn("Google", self.driver.title)
+        search_field = self.driver.find_element_by_name('q')
+        search_field.send_keys('svsadfsdafsdfsdfsafasdfsdafas')
+        search_field.submit()
+        assert "Es wurden keine mit deiner Suchanfrage" in self.driver.page_source
+
     def tearDown(self):
         self.driver.close()
 
