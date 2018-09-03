@@ -1,4 +1,4 @@
-"""lesson 10: action chain (only on one page)"""
+"""lesson 11: action chain (only on one page)"""
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 
